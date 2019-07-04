@@ -1,0 +1,5 @@
+#!/usr/bin/with-contenv bash
+
+
+exec \
+	/usr/sbin/ngircd -n -f /config/ngircd.conf

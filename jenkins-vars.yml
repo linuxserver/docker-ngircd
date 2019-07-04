@@ -1,0 +1,21 @@
+---
+
+# jenkins variables
+project_name: docker-ngircd
+external_type: alpine_repo
+release_type: stable
+release_tag: latest
+ls_branch: master
+repo_vars:
+  - EXT_GIT_BRANCH = 'master'
+  - BUILD_VERSION_ARG = 'NGIRCD_RELEASE'
+  - LS_USER = 'linuxserver'
+  - LS_REPO = 'docker-ngircd'
+  - CONTAINER_NAME = 'ngircd'
+  - DOCKERHUB_IMAGE = 'linuxserver/ngircd'
+  - DEV_DOCKERHUB_IMAGE = 'lsiodev/ngircd'
+  - PR_DOCKERHUB_IMAGE = 'lspipepr/ngircd'
+  - DIST_IMAGE = 'alpine'
+  - MULTIARCH='true'
+  - CI='true'
+  - CI_WEB='false'

@@ -1,0 +1,36 @@
+---
+
+# project information
+project_name: ngircd
+project_url: "https://ngircd.barton.de/"
+project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/ngircd-logo.png"
+project_blurb: "[{{ project_name|capitalize }}]({{ project_url }}) is a free, portable and lightweight Internet Relay Chat server for small or private networks, developed under the GNU General Public License (GPL). It is easy to configure, can cope with dynamic IP addresses, and supports IPv6, SSL-protected connections as well as PAM for authentication. It is written from scratch and not based on the original IRCd."
+project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
+
+# supported architectures
+available_architectures:
+  - { arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
+  - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
+  - { arch: "{{ arch_armhf }}", tag: "arm32v7-latest"}
+
+# container parameters
+param_container_name: "{{ project_name }}"
+param_usage_include_vols: true
+param_volumes:
+  - { vol_path: "/config", vol_host_path: "</path/to/ngircd/config>", desc: "Where `ngircd.conf` is stored" }
+param_usage_include_ports: true
+param_ports:
+  - { external_port: "6667", internal_port: "6667", port_desc: "ngircd port" }
+param_usage_include_env: true
+param_env_vars:
+  - { env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London"}
+
+# application setup block
+app_setup_block_enabled: true
+app_setup_block: |
+  - To setup ngircd you will need to edit `/config/ngircd.conf` for information see the ngircd site [here.](https://github.com/ngircd/ngircd/blob/master/doc/sample-ngircd.conf.tmpl)
+  - Restart the container to apply your config changes.
+
+# changelog
+changelogs:
+  - { date: "04.07.19:", desc: "Initial release." }
