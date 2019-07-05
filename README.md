@@ -91,7 +91,7 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-p 6667` | ngircd port |
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
-| `-e TZ=Europe/London` | Specify a timezone to use EG Europe/London |
+| `-e TZ=Europe/London` | Specify a timezone to use e.g. Europe/London |
 | `-v /config` | Where `ngircd.conf` is stored |
 
 ## User / Group Identifiers
@@ -111,8 +111,8 @@ In this instance `PUID=1000` and `PGID=1000`, to find yours use `id user` as bel
 &nbsp;
 ## Application Setup
 
-- To setup ngircd you will need to edit `/config/ngircd.conf` for information see the ngircd site [here.](https://github.com/ngircd/ngircd/blob/master/doc/sample-ngircd.conf.tmpl)
-- Restart the container to apply your config changes.
+- To setup ngircd you will need to edit `/config/ngircd.conf` which is created the first time the container is run, edit the file and restart the container to implement any config changes.  
+- For information see the ngircd site [here.](https://github.com/ngircd/ngircd/blob/master/doc/sample-ngircd.conf.tmpl)
 
 
 
