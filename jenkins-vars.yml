@@ -2,7 +2,7 @@
 
 # jenkins variables
 project_name: docker-ngircd
-external_type: alpine_repo
+external_type: os
 release_type: stable
 release_tag: latest
 ls_branch: master

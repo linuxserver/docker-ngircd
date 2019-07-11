@@ -3,7 +3,6 @@ FROM lsiobase/alpine:3.10
 # set version label
 ARG BUILD_DATE
 ARG VERSION
-ARG NGIRCD_RELEASE
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="anoma"
 
