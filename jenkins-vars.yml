@@ -2,7 +2,7 @@
 
 # jenkins variables
 project_name: docker-ngircd
-external_type: os
+external_type: alpine_repo
 release_type: stable
 release_tag: latest
 ls_branch: master
@@ -16,6 +16,9 @@ repo_vars:
   - DEV_DOCKERHUB_IMAGE = 'lsiodev/ngircd'
   - PR_DOCKERHUB_IMAGE = 'lspipepr/ngircd'
   - DIST_IMAGE = 'alpine'
+  - DIST_TAG = '3.13'
+  - DIST_REPO = 'http://nl.alpinelinux.org/alpine/v3.13/main/'
+  - DIST_REPO_PACKAGES = 'ngircd'
   - MULTIARCH='true'
   - CI='true'
   - CI_WEB='false'
