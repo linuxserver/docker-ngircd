@@ -17,7 +17,7 @@ repo_vars:
   - PR_DOCKERHUB_IMAGE = 'lspipepr/ngircd'
   - DIST_IMAGE = 'alpine'
   - DIST_TAG = '3.13'
-  - DIST_REPO = 'http://nl.alpinelinux.org/alpine/v3.13/main/'
+  - DIST_REPO = 'http://dl-cdn.alpinelinux.org/alpine/v3.13/main/'
   - DIST_REPO_PACKAGES = 'ngircd'
   - MULTIARCH='true'
   - CI='true'
