@@ -17,7 +17,7 @@ available_architectures:
 param_container_name: "{{ project_name }}"
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "</path/to/ngircd/config>", desc: "Where `ngircd.conf` is stored" }
+  - { vol_path: "/config", vol_host_path: "/path/to/ngircd/config", desc: "Where `ngircd.conf` is stored" }
 param_usage_include_ports: true
 param_ports:
   - { external_port: "6667", internal_port: "6667", port_desc: "ngircd port" }
@@ -33,6 +33,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "11.10.22:", desc: "Rebasing to alpine 3.16, migrate to s6v3." }
   - { date: "23.01.21:", desc: "Rebasing to alpine 3.13." }
   - { date: "01.06.20:", desc: "Rebasing to alpine 3.12." }
   - { date: "19.12.19:", desc: "Rebasing to alpine 3.11." }

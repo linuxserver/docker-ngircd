@@ -1,0 +1,15 @@
+#!/usr/bin/with-contenv bash
+
+# make our folders
+mkdir -p \
+    /var/run/ngircd
+
+# copy config
+if [[ ! -f /config/ngircd.conf ]]; then
+    cp /defaults/ngircd.conf /config/ngircd.conf
+fi
+
+# permissions
+chown -R abc:abc \
+    /config \
+    /var/run/ngircd
