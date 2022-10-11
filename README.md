@@ -81,7 +81,7 @@ services:
       - PGID=1000
       - TZ=Europe/London
     volumes:
-      - </path/to/ngircd/config>:/config
+      - /path/to/ngircd/config:/config
     ports:
       - 6667:6667
     restart: unless-stopped
@@ -96,7 +96,7 @@ docker run -d \
   -e PGID=1000 \
   -e TZ=Europe/London \
   -p 6667:6667 \
-  -v </path/to/ngircd/config>:/config \
+  -v /path/to/ngircd/config:/config \
   --restart unless-stopped \
   lscr.io/linuxserver/ngircd:latest
 ```
