@@ -1,4 +1,6 @@
-FROM ghcr.io/linuxserver/baseimage-alpine:3.16
+# syntax=docker/dockerfile:1
+
+FROM ghcr.io/linuxserver/baseimage-alpine:3.17
 
 # set version label
 ARG BUILD_DATE
@@ -10,12 +12,15 @@ LABEL maintainer="anoma"
 RUN \
   echo "**** install packages ****" && \
   if [ -z ${NGIRCD_RELEASE+x} ]; then \
-    NGIRCD_RELEASE=$(curl -sL "http://dl-cdn.alpinelinux.org/alpine/v3.16/main/x86_64/APKINDEX.tar.gz" | tar -xz -C /tmp \
+    NGIRCD_RELEASE=$(curl -sL "http://dl-cdn.alpinelinux.org/alpine/v3.17/main/x86_64/APKINDEX.tar.gz" | tar -xz -C /tmp \
     && awk '/^P:ngircd$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://'); \
   fi && \
   apk add --no-cache \
     ngircd==${NGIRCD_RELEASE} \
-    ngircd-doc==${NGIRCD_RELEASE}
+    ngircd-doc==${NGIRCD_RELEASE} && \
+  echo "**** cleanup ****" && \
+  rm -rf \
+    /tmp/*
 
 # copy local files
 COPY root/ /
