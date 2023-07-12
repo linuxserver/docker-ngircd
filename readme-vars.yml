@@ -26,6 +26,7 @@ app_setup_block_enabled: true
 app_setup_block: "- To setup ngircd you will need to edit `/config/ngircd.conf` which is created the first time the container is run, edit the file and restart the container to implement any config changes.  \n- For information see the ngircd site [here.](https://github.com/ngircd/ngircd/blob/master/doc/sample-ngircd.conf.tmpl)\n"
 # changelog
 changelogs:
+  - {date: "12.07.23:", desc: "Rebase to Alpine 3.18."}
   - {date: "01.07.23:", desc: "Deprecate armhf. As announced [here](https://www.linuxserver.io/blog/a-farewell-to-arm-hf)"}
   - {date: "05.03.23:", desc: "Rebase to Alpine 3.17."}
   - {date: "11.10.22:", desc: "Rebasing to alpine 3.16, migrate to s6v3."}
