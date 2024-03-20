@@ -59,7 +59,7 @@ The architectures supported by this image are:
 
 ## Application Setup
 
-- To setup ngircd you will need to edit `/config/ngircd.conf` which is created the first time the container is run, edit the file and restart the container to implement any config changes.  
+- To setup ngircd you will need to edit `/config/ngircd.conf` which is created the first time the container is run, edit the file and restart the container to implement any config changes.
 - For information see the ngircd site [here.](https://github.com/ngircd/ngircd/blob/master/doc/sample-ngircd.conf.tmpl)
 
 ## Usage
@@ -272,6 +272,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **20.03.24:** - Rebase to Alpine 3.19.
 * **12.07.23:** - Rebase to Alpine 3.18.
 * **01.07.23:** - Deprecate armhf. As announced [here](https://www.linuxserver.io/blog/a-farewell-to-arm-hf)
 * **05.03.23:** - Rebase to Alpine 3.17.
