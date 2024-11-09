@@ -62,6 +62,7 @@ The architectures supported by this image are:
 * To setup ngircd you will need to edit `/config/ngircd.conf` which is created the first time the container is run, edit the file and restart the container to implement any config changes.
 * For information see the ngircd site [here.](https://github.com/ngircd/ngircd/blob/master/doc/sample-ngircd.conf.tmpl)
 
+ 
 ## Usage
 
 To help you get started creating a container from this image you can either use docker-compose or the docker cli.
@@ -263,10 +264,10 @@ docker build \
   -t lscr.io/linuxserver/ngircd:latest .
 ```
 
-The ARM variants can be built on x86_64 hardware using `multiarch/qemu-user-static`
+The ARM variants can be built on x86_64 hardware and vice versa using `lscr.io/linuxserver/qemu-static`
 
 ```bash
-docker run --rm --privileged multiarch/qemu-user-static:register --reset
+docker run --rm --privileged lscr.io/linuxserver/qemu-static --reset
 ```
 
 Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64`.
